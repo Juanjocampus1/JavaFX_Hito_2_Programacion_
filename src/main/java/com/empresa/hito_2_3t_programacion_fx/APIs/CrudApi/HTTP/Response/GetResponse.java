@@ -1,4 +1,4 @@
-package com.empresa.hito_2_3t_programacion_fx.HTTP.Response;
+package com.empresa.hito_2_3t_programacion_fx.APIs.CrudApi.HTTP.Response;
 
 import com.empresa.hito_2_3t_programacion_fx.DTO.DataDTO;
 import org.json.JSONArray;
@@ -24,7 +24,7 @@ public class GetResponse {
 
             // Crea la solicitud GET
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("http://localhost:8091/api/products/findAll")) // Endpoint para la solicitud GET
+                    .uri(URI.create("http://localhost:9090/api/products/findAll")) // Endpoint para la solicitud GET
                     .GET() // Define que es una solicitud GET
                     .build();
 

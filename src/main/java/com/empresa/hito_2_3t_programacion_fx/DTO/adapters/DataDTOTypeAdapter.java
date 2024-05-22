@@ -1,5 +1,6 @@
-package com.empresa.hito_2_3t_programacion_fx.DTO;
+package com.empresa.hito_2_3t_programacion_fx.DTO.adapters;
 
+import com.empresa.hito_2_3t_programacion_fx.DTO.DataDTO;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;

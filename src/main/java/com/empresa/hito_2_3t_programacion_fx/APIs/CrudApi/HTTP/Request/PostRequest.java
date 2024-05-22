@@ -1,4 +1,4 @@
-package com.empresa.hito_2_3t_programacion_fx.HTTP.Request;
+package com.empresa.hito_2_3t_programacion_fx.APIs.CrudApi.HTTP.Request;
 
 import com.empresa.hito_2_3t_programacion_fx.DTO.DataDTO;
 import com.google.gson.*;
@@ -29,7 +29,7 @@ public class PostRequest {
 
             // Crea la solicitud POST con el JSON generado
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("http://localhost:8091/api/products/create")) // Endpoint de la API
+                    .uri(URI.create("http://localhost:9090/api/products/create")) // Endpoint de la API
                     .header("Content-Type", "application/json") // Tipo de contenido
                     .POST(HttpRequest.BodyPublishers.ofString(json)) // Cuerpo del POST con el JSON
                     .build();

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.collections.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -10,7 +12,7 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Label styleClass="title" text="Gestión de Datos" />
+    <Label styleClass="title" text="CLUB PETALOS" />
 
     <!-- Formulario para ingresar datos -->
     <GridPane alignment="CENTER" hgap="10" prefHeight="200" prefWidth="800" vgap="10">
@@ -41,7 +43,18 @@
 
         <!-- Campo Categoría -->
         <Label styleClass="label" text="Categoría:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <TextField fx:id="categoryField" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <ComboBox fx:id="categoryField" prefHeight="24.0" prefWidth="207.0" styleClass="combo-box text-field" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Aeronautica" />
+                    <String fx:value="Electronica" />
+                    <String fx:value="Deportes" />
+                    <String fx:value="Nutricion" />
+                    <String fx:value="Medicina" />
+                    <String fx:value="Otro" />
+                </FXCollections>
+            </items>
+        </ComboBox>
 
         <!-- Campo Precio -->
         <Label styleClass="label" text="Precio:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
@@ -50,7 +63,7 @@
     <HBox alignment="CENTER_RIGHT" spacing="20">
         <!-- Campo de texto para la búsqueda -->
         <TextField fx:id="searchField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <Button fx:id="searchButton" onAction="#onSearchButtonClick" prefHeight="51.0" prefWidth="100.0" text="Buscar" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="button-search">
+        <Button fx:id="searchButton" onAction="#onSearchButtonClick" prefHeight="51.0" prefWidth="100.0" styleClass="button-search" text="Buscar" GridPane.columnIndex="2" GridPane.rowIndex="0">
             <font>
                 <Font size="20.0" />
             </font>
@@ -66,8 +79,6 @@
             <TableColumn fx:id="priceColumn" styleClass="table-column" text="Precio" />
         </columns>
     </TableView>
-
-
     <!-- Sección de Botones -->
     <HBox alignment="CENTER" spacing="20">
         <Button fx:id="createButton" onAction="#onCreateButtonClick" prefHeight="25.0" prefWidth="100.0" styleClass="button-primary" text="CREAR">

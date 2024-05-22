@@ -1,7 +1,7 @@
-package com.empresa.hito_2_3t_programacion_fx.HTTP.Request;
+package com.empresa.hito_2_3t_programacion_fx.APIs.CrudApi.HTTP.Request;
 
 import com.empresa.hito_2_3t_programacion_fx.DTO.DataDTO;
-import com.empresa.hito_2_3t_programacion_fx.DTO.DataDTOTypeAdapter;
+import com.empresa.hito_2_3t_programacion_fx.DTO.adapters.DataDTOTypeAdapter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -27,7 +27,7 @@ public class PutRequest {
 
             // Crear la solicitud PUT con el JSON
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("http://localhost:8091/api/products/update/" + id)) // URI con ID
+                    .uri(URI.create("http://localhost:9090/api/products/update/" + id)) // URI con ID
                     .header("Content-Type", "application/json")
                     .PUT(HttpRequest.BodyPublishers.ofString(json))
                     .build();

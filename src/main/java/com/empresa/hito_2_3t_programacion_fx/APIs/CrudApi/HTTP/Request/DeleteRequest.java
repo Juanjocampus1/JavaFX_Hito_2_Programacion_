@@ -1,4 +1,4 @@
-package com.empresa.hito_2_3t_programacion_fx.HTTP.Request;
+package com.empresa.hito_2_3t_programacion_fx.APIs.CrudApi.HTTP.Request;
 
 import com.empresa.hito_2_3t_programacion_fx.DTO.DataDTO;
 
@@ -21,7 +21,7 @@ public class DeleteRequest {
 
             // Crear la solicitud DELETE con el ID del recurso
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("http://localhost:8091/api/products/delete/" + id)) // Endpoint con el ID
+                    .uri(URI.create("http://localhost:9090/api/products/delete/" + id)) // Endpoint con el ID
                     .DELETE() // Solicitud DELETE
                     .build();
 

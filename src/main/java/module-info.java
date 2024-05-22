@@ -12,10 +12,12 @@ module com.empresa.hito_2_3t_programacion_fx {
     requires java.net.http;
     requires java.logging;
     requires org.json;
+    requires org.junit.jupiter.api;
 
     opens com.empresa.hito_2_3t_programacion_fx to javafx.fxml;
     exports com.empresa.hito_2_3t_programacion_fx;
     exports com.empresa.hito_2_3t_programacion_fx.Controllers;
     opens com.empresa.hito_2_3t_programacion_fx.Controllers to javafx.fxml;
     opens com.empresa.hito_2_3t_programacion_fx.DTO to javafx.base;
+    opens com.empresa.hito_2_3t_programacion_fx.DTO.adapters to javafx.base;
 }

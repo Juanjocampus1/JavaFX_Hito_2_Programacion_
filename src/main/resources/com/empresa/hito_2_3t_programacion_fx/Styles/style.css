@@ -92,6 +92,29 @@
     -fx-unfocus-color: #555; /* Gris oscuro cuando no está en foco */
 }
 
+/* Estilos para el ComboBox */
+.combo-box {
+    -fx-background-color: #424242; /* Gris oscuro */
+    -fx-border-color: #555; /* Borde gris más oscuro */
+    -fx-border-radius: 8px; /* Bordes redondeados */
+    -fx-padding: 12px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #fff; /* Texto blanco */
+    -fx-focus-color: #9c27b0; /* Morado oscuro al hacer clic */
+    -fx-unfocus-color: #555; /* Gris oscuro cuando no está en foco */
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #424242; /* Gris oscuro */
+    -fx-text-fill: #e5e5e5; /* Texto blanco */
+}
+
+
+.combo-box .list-cell:filled:hover {
+    -fx-background-color: #555; /* Gris más oscuro al pasar el mouse */
+    -fx-text-fill: #ebebeb; /* Texto blanco */
+}
+
 /* Estilos para la Tabla */
 .table-view {
     -fx-background-color: #424242; /* Gris oscuro */

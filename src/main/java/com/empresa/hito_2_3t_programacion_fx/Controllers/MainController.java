@@ -1,21 +1,19 @@
 package com.empresa.hito_2_3t_programacion_fx.Controllers;
 
 import com.empresa.hito_2_3t_programacion_fx.DTO.DataDTO;
-import com.empresa.hito_2_3t_programacion_fx.HTTP.Request.DeleteRequest;
-import com.empresa.hito_2_3t_programacion_fx.HTTP.Request.PostRequest;
-import com.empresa.hito_2_3t_programacion_fx.HTTP.Request.PutRequest;
-import com.empresa.hito_2_3t_programacion_fx.HTTP.Response.GetResponse;
+import com.empresa.hito_2_3t_programacion_fx.APIs.CrudApi.HTTP.Request.DeleteRequest;
+import com.empresa.hito_2_3t_programacion_fx.APIs.CrudApi.HTTP.Request.PostRequest;
+import com.empresa.hito_2_3t_programacion_fx.APIs.CrudApi.HTTP.Request.PutRequest;
+import com.empresa.hito_2_3t_programacion_fx.APIs.CrudApi.HTTP.Response.GetResponse;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyEvent;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class MainController {
@@ -27,7 +25,7 @@ public class MainController {
     @FXML
     private TextField descriptionField;
     @FXML
-    private TextField categoryField;
+    private ComboBox<String> categoryField;
     @FXML
     private TextField priceField;
 
@@ -49,6 +47,10 @@ public class MainController {
     @FXML
     private Button searchButton;
 
+    public List<DataDTO> getDataList() {
+        // return the data list
+        return Collections.emptyList();
+    }
 
     public void initialize() {
         // Configurar ancho relativo para las columnas
@@ -97,14 +99,17 @@ public class MainController {
                 idField.setText(String.valueOf(selectedData.getId()));
                 nameField.setText(selectedData.getName());
                 descriptionField.setText(selectedData.getDescription());
-                categoryField.setText(selectedData.getCategory());
+
+                // Establecer la categoría seleccionada en el ComboBox
+                categoryField.setValue(selectedData.getCategory());
+
                 priceField.setText(selectedData.getPrice().toString());
             }
         });
     }
 
     @FXML
-    protected void onSearchButtonClick() {
+    public void onSearchButtonClick() {
         String searchText = searchField.getText().toLowerCase();
 
         // Crear un objeto GetResponse y enviar la solicitud GET a la API
@@ -125,11 +130,11 @@ public class MainController {
     }
 
     @FXML
-    protected void onCreateButtonClick() {
+    public void onCreateButtonClick() {
         // Extraer los valores de los campos de texto
         String name = nameField.getText();
         String description = descriptionField.getText();
-        String category = categoryField.getText();
+        String category = categoryField.getValue();
         String priceText = priceField.getText();
 
         //definir una constante con el valor error
@@ -164,7 +169,6 @@ public class MainController {
         // Limpiar los campos de texto después de enviar la solicitud
         nameField.clear();
         descriptionField.clear();
-        categoryField.clear();
         priceField.clear();
 
         // Crear un objeto GetResponse y enviar la solicitud GET a la API
@@ -177,12 +181,12 @@ public class MainController {
     }
 
     @FXML
-    protected void onUpdateButtonClick() {
+    public void onUpdateButtonClick() {
         // Extraer los valores de los campos de texto
         String idText = idField.getText();
         String name = nameField.getText();
         String description = descriptionField.getText();
-        String category = categoryField.getText();
+        String category = categoryField.getValue();
         String priceText = priceField.getText();
 
         final String ERROR = "ERROR";
@@ -218,7 +222,6 @@ public class MainController {
         idField.clear();
         nameField.clear();
         descriptionField.clear();
-        categoryField.clear();
         priceField.clear();
 
         // Crear un objeto GetResponse y enviar la solicitud GET a la API
@@ -239,7 +242,7 @@ public class MainController {
     }
 
     @FXML
-    protected void onDeleteButtonClick() {
+    public void onDeleteButtonClick() {
         // Extraer el valor del campo de texto ID
         Long id = Long.parseLong(idField.getText());
 
@@ -255,7 +258,6 @@ public class MainController {
         idField.clear();
         nameField.clear();
         descriptionField.clear();
-        categoryField.clear();
         priceField.clear();
 
         // Crear un objeto GetResponse y enviar la solicitud GET a la API
@@ -268,12 +270,11 @@ public class MainController {
     }
 
     @FXML
-    protected void onClearButtonClick() {
+    public void onClearButtonClick() {
         // Limpiar todos los campos de texto
         idField.clear();
         nameField.clear();
         descriptionField.clear();
-        categoryField.clear();
         priceField.clear();
     }
 }
