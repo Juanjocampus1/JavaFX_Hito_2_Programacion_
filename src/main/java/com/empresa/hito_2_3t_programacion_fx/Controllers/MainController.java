@@ -1,10 +1,16 @@
 package com.empresa.hito_2_3t_programacion_fx.Controllers;
 
+import com.empresa.hito_2_3t_programacion_fx.APIs.CrudApi.HTTP.Response.GetUserResponse;
 import com.empresa.hito_2_3t_programacion_fx.DTO.DataDTO;
 import com.empresa.hito_2_3t_programacion_fx.APIs.CrudApi.HTTP.Request.DeleteRequest;
 import com.empresa.hito_2_3t_programacion_fx.APIs.CrudApi.HTTP.Request.PostRequest;
 import com.empresa.hito_2_3t_programacion_fx.APIs.CrudApi.HTTP.Request.PutRequest;
 import com.empresa.hito_2_3t_programacion_fx.APIs.CrudApi.HTTP.Response.GetResponse;
+import com.empresa.hito_2_3t_programacion_fx.DTO.RoleDTO;
+import com.empresa.hito_2_3t_programacion_fx.DTO.TokenDTO;
+import com.empresa.hito_2_3t_programacion_fx.DTO.UserDTO;
+import com.empresa.hito_2_3t_programacion_fx.Persistence.TokenStorage;
+import com.google.gson.Gson;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,6 +21,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MainController {
 
@@ -47,12 +54,35 @@ public class MainController {
     @FXML
     private Button searchButton;
 
+    @FXML
+    private Label userEmailLabel;
+    @FXML
+    private Label usernameLabel;
+    @FXML
+    private Label userRolesLabel;
+    private TokenDTO tokenDTO;
+
     public List<DataDTO> getDataList() {
         // return the data list
         return Collections.emptyList();
     }
 
     public void initialize() {
+
+        // Obtener el token de TokenStorage
+        String token = TokenStorage.getToken();
+
+        // Crear un objeto GetUserResponse y enviar la solicitud GET a la API
+        GetUserResponse getUserResponse = new GetUserResponse();
+        UserDTO userDto = getUserResponse.getUserByToken();
+
+        // Mapear los datos del usuario en las etiquetas
+        if (userDto != null) {
+            userEmailLabel.setText("Email: " + userDto.getEmail());
+            usernameLabel.setText("Username: " + userDto.getUsername());
+            userRolesLabel.setText("Roles: " + userDto.getRoles().stream().map(RoleDTO::getName).collect(Collectors.joining(", ")));
+        }
+
         // Configurar ancho relativo para las columnas
         idColumn.prefWidthProperty().bind(dataTable.widthProperty().multiply(0.1)); // 10% del ancho total
         nameColumn.prefWidthProperty().bind(dataTable.widthProperty().multiply(0.2)); // 20% del ancho total

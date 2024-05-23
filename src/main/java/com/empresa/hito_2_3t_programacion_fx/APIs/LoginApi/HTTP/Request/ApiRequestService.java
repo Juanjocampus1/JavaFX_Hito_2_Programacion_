@@ -2,6 +2,7 @@ package com.empresa.hito_2_3t_programacion_fx.APIs.LoginApi.HTTP.Request;
 
 import com.empresa.hito_2_3t_programacion_fx.DTO.LoginDTO;
 import com.empresa.hito_2_3t_programacion_fx.DTO.LoginDTOTypeAdapter;
+import com.empresa.hito_2_3t_programacion_fx.DTO.TokenDTO;
 import com.empresa.hito_2_3t_programacion_fx.DTO.UserRegistrationDTO;
 import com.empresa.hito_2_3t_programacion_fx.DTO.adapters.UserRegistrationDTOTypeAdapter;
 import com.google.gson.*;
@@ -24,7 +25,7 @@ public class ApiRequestService {
                 .create();
     }
 
-    public String loginUser(LoginDTO loginDTO) {
+    public TokenDTO loginUser(LoginDTO loginDTO) {
         String requestBody = gson.toJson(loginDTO);
 
         HttpRequest request = HttpRequest.newBuilder()
@@ -35,9 +36,13 @@ public class ApiRequestService {
 
         try {
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-            JsonObject jsonResponse = JsonParser.parseString(response.body()).getAsJsonObject();
-            JsonElement tokenElement = jsonResponse.get("token");
-            return tokenElement != null ? tokenElement.getAsString() : null;
+            if (response.body() != null && !response.body().isEmpty()) {
+                JsonObject jsonResponse = JsonParser.parseString(response.body()).getAsJsonObject();
+                return gson.fromJson(jsonResponse, TokenDTO.class);
+            } else {
+                System.out.println("Error: Response body is null or empty");
+                return null;
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return null;

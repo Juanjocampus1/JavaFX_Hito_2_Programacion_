@@ -2,10 +2,41 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.empresa.hito_2_3t_programacion_fx.Controllers.LoginController">
-    <Label text="Inicio de sesión" />
-    <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="679.0" promptText="nombre" />
-    <PasswordField fx:id="passwordField" promptText="Contraseña" />
-    <Button fx:id="loginButton" text="Iniciar sesión" onAction="#loginUser" />
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20" stylesheets="@../Styles/login.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.empresa.hito_2_3t_programacion_fx.Controllers.LoginController">
+    <Label contentDisplay="CENTER" prefHeight="57.0" prefWidth="226.0" styleClass="title" text="Inicio de sesión">
+        <font>
+            <Font size="27.0" />
+        </font></Label>
+
+    <GridPane alignment="CENTER" hgap="10" styleClass="grid-pane" vgap="10">
+        <Label styleClass="label" text="Nombre de usuario:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="usernameField" promptText="nombre" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label styleClass="label" text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <PasswordField fx:id="passwordField" promptText="Contraseña" styleClass="password-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Button fx:id="loginButton" onAction="#loginUser" styleClass="button" text="Iniciar sesión" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+
+        <Button fx:id="forgotPasswordButton" onAction="#forgotPassword" styleClass="link-button" text="Olvidé mi contraseña" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+
+        <Button fx:id="back" onAction="#back" styleClass="button" text="Volver" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+
+        <Label fx:id="message" styleClass="error-message" text="vvvvvvvvvvv" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" />
+            <ColumnConstraints halignment="CENTER" />
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints valignment="CENTER" />
+            <RowConstraints valignment="CENTER" />
+            <RowConstraints valignment="CENTER" />
+            <RowConstraints valignment="CENTER" />
+            <RowConstraints valignment="CENTER" />
+            <RowConstraints valignment="CENTER" />
+        </rowConstraints>
+    </GridPane>
 </VBox>

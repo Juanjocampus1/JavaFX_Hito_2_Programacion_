@@ -1,0 +1,181 @@
+/* Styles/register.css */
+
+/* Global Styles */
+.root {
+    -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -fx-background: linear-gradient(to bottom, #2c3e50, #4c4b63, #283c63);
+    -fx-padding: 20px;
+    -fx-alignment: center;
+}
+
+/* Title Style */
+.title {
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-padding-bottom: 30px;
+}
+
+/* Label Styles */
+.label {
+    -fx-font-size: 18px;
+    -fx-text-fill: #dddddd;
+}
+
+/* TextField and PasswordField Styles */
+.text-field, .password-field {
+    -fx-pref-height: 50px;
+    -fx-pref-width: 350px;
+    -fx-font-size: 16px;
+    -fx-border-color: #888;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 0 15px;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #aaaaaa;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #66afe9;
+    -fx-box-shadow: 0 0 10px rgba(102, 175, 233, 0.7);
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Button Styles */
+.button {
+    -fx-font-size: 18px;
+    -fx-pref-height: 50px;
+    -fx-pref-width: 350px;
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0, 0, 3);
+    -fx-transition: all 0.3s ease;
+}
+
+.button:hover {
+    -fx-background-color: #0056b3;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Link Button Styles */
+.link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #007bff;
+    -fx-underline: true;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+    -fx-transition: all 0.3s ease;
+}
+
+.link-button:hover {
+    -fx-text-fill: #0056b3;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-background-color: #444444;
+}
+
+/* GridPane Styles */
+.grid-pane {
+    -fx-padding: 30px;
+    -fx-hgap: 20px;
+    -fx-vgap: 20px;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-border-color: #888;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+    -fx-alignment: center;
+}
+
+/* Error Message Label Styles */
+.error-message {
+    -fx-text-fill: red;
+    -fx-font-size: 16px;
+    -fx-padding-top: 20px;
+    -fx-opacity: 0;
+    -fx-transition: opacity 0.5s ease;
+}
+
+.error-message.visible {
+    -fx-opacity: 1;
+}
+
+/* Additional Animations and Styles */
+@keyframes buttonHover {
+    0% { -fx-scale-x: 1; -fx-scale-y: 1; }
+    50% { -fx-scale-x: 1.1; -fx-scale-y: 1.1; }
+    100% { -fx-scale-x: 1.05; -fx-scale-y: 1.05; }
+}
+
+.button:hover {
+    -fx-animation: buttonHover 0.3s forwards;
+}
+
+@keyframes linkHover {
+    0% { -fx-text-fill: #007bff; }
+    50% { -fx-text-fill: #0056b3; }
+    100% { -fx-text-fill: #003d7a; }
+}
+
+.link-button:hover {
+    -fx-animation: linkHover 0.3s forwards;
+}
+
+/* Enhancements for TextFields and PasswordFields */
+.text-field, .password-field {
+    -fx-border-width: 2px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #4a90e2;
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Scrollbar Styles */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #007bff;
+    -fx-background-insets: 0;
+    -fx-background-radius: 10px;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-min-height: 20px;
+}
+
+.scroll-bar:horizontal .thumb {
+    -fx-min-width: 20px;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    -fx-font-size: 14px;
+    -fx-background-color: #333;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+}
+
+.tooltip:arrow {
+    -fx-background-color: #333;
+}
+
+/* Custom focus traversal */
+.text-field:focused {
+    -fx-border-color: #4a90e2;
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+.password-field:focused {
+    -fx-border-color: #4a90e2;
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
