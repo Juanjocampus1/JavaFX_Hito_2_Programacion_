@@ -1,0 +1,8 @@
+
+
+java:S2629%"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Óé¨™üÿÿÿÿJ$ca2129f3-0e05-4acf-b93e-f21ebd6fc163
+˜
+java:S2629&"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(èÆñ»J$42062314-6bf8-45d9-b007-39d56e33d545
+”	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŞóÕ-J$637eeba3-ab0e-4c01-8d94-bbff7697c8c5
+š
+java:S2142("^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾J$90a56c8f-a221-495e-9831-36418a598aeb

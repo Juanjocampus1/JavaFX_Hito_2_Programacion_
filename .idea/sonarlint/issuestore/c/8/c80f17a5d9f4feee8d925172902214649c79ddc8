@@ -1,0 +1,9 @@
+
+	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ÁŠ«Êûÿÿÿÿ8î¥ö•ú1J$5b514745-7410-4611-9bb8-6c724902c8a6
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ö›éªJ$03398074-8e8c-44ee-b5ba-854f704160e7
+‚
+java:S1118":Add a private constructor to hide the implicit public one.(Äó³İùÿÿÿÿ8÷¥ö•ú1J$bb530000-570a-49da-add1-d2689851e9e9
+n
+java:S1874"+Remove this use of "URL"; it is deprecated.(µ£ëÖ8û¥ö•ú1J$40af3bcc-babb-47db-9e9e-bea8041a8dc1
+|
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(øÕÅ8ƒ¦ö•ú1J$a080512a-91fc-4e97-805b-222f25d8bb51

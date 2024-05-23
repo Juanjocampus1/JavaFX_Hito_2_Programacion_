@@ -1,0 +1,6 @@
+
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ˆ±ÝÁJ$fff5c7d8-7160-4eb5-8447-1f5a9a5c5f94
+r	java:S106<"+Replace this use of System.out by a logger.(Ý¥ÂŒþÿÿÿÿ8è¿ù•ú1J$f8cec13a-8562-44d3-9aae-731a7402519d
+l	java:S106C"+Replace this use of System.out by a logger.(ÿìT8è¿ù•ú1J$4cc97112-4f35-47ad-846f-2e0b9288352a
+}
+java:S1068 "5Remove this unused "apiRequestService" private field.(´Úáùÿÿÿÿ8ì¿ù•ú1J$d2585faa-2f6c-4d7c-8286-f827ccf71dbe

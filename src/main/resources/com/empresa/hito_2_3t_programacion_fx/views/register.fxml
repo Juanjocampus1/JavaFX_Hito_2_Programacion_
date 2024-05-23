@@ -9,6 +9,6 @@
     <TextField fx:id="usernameField" promptText="Nombre de usuario"/>
     <TextField fx:id="emailField" promptText="Email"/>
     <PasswordField fx:id="passwordField" promptText="Contraseña"/>
-    <Button fx:id="registerButton" text="Registrarse"/>
+    <Button fx:id="registerButton" text="Registrarse" onAction="#registerUser"/>
     <Button fx:id="alreadyHaveAccountButton" text="Ya tengo una cuenta" onAction="#switchToLogin"/>
 </VBox>

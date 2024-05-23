@@ -1,6 +1,6 @@
 package com.empresa.hito_2_3t_programacion_fx.Controllers;
 
-import com.empresa.hito_2_3t_programacion_fx.APIs.RegisterApi.HTTP.Request.ApiRequestService;
+import com.empresa.hito_2_3t_programacion_fx.APIs.LoginApi.HTTP.Request.ApiRequestService;
 import com.empresa.hito_2_3t_programacion_fx.DTO.LoginDTO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

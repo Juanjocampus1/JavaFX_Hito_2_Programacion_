@@ -29,7 +29,7 @@ public class PostRequest {
 
             // Crea la solicitud POST con el JSON generado
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("http://localhost:9090/api/products/create")) // Endpoint de la API
+                    .uri(URI.create("http://localhost:8081/api/products/create")) // Endpoint de la API
                     .header("Content-Type", "application/json") // Tipo de contenido
                     .POST(HttpRequest.BodyPublishers.ofString(json)) // Cuerpo del POST con el JSON
                     .build();

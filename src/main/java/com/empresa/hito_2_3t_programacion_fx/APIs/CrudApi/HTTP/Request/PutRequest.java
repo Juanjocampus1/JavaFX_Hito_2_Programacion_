@@ -27,7 +27,7 @@ public class PutRequest {
 
             // Crear la solicitud PUT con el JSON
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("http://localhost:9090/api/products/update/" + id)) // URI con ID
+                    .uri(URI.create("http://localhost:8081/api/products/update/" + id)) // URI con ID
                     .header("Content-Type", "application/json")
                     .PUT(HttpRequest.BodyPublishers.ofString(json))
                     .build();
